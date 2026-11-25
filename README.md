@@ -1,4 +1,4 @@
-# ale: a local agentic engineering framework
+# Alejandro&Co: a local agentic engineering framework
 
 `ale` runs a small team of Claude Code agents on a ticket: a **builder** writes the plan and the code, a **reviewer** reviews it in the pane beside it, a **lead** splits an epic, and **Alejandro** (the HQ agent) starts tasks and reports status. Skills say what to do, `ale gate` defines "ready", and hooks block the next step unless the gate or your approval allows it.
 
