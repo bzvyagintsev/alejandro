@@ -1,0 +1,8 @@
+# Generic Jira workflow. Transitions are chosen by TARGET STATUS, never by name or id (names and ids differ by starting status).
+# Put your own statuses under `jira: workflows:` in ~/.ale/config.yaml; they replace these.
+workflows:
+  default:
+    order: [To Do, In Progress, In Review, Done]
+    start: In Progress
+    review: In Review
+    done: Done

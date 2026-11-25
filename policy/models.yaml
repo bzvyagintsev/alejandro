@@ -1,0 +1,1 @@
+default: claude-sonnet-5-5   # pin here; a missing --model gives Opus through the managed Opus Plan setting

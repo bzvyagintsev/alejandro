@@ -1,0 +1,32 @@
+# Test settings standing in for a user's ~/.ale/config.yaml (statuses, Type field, bot accounts).
+ignore_pr_authors:
+- ci-bot-account
+- audit-account
+jira:
+  type_field: customfield_10001
+  type_defaults:
+    task: Feature
+    story: Feature
+    bug: Maintenance
+  workflows:
+    default:
+      order:
+      - Todo
+      - Selected
+      - In Progress
+      - In Review
+      - Done
+      start: In Progress
+      review: In Review
+      done: Done
+    bug:
+      order:
+      - New
+      - Ready
+      - In Progress
+      - Code Review
+      - QA
+      - Shipped
+      start: In Progress
+      review: Code Review
+      done: Shipped

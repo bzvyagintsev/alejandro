@@ -1,0 +1,6 @@
+# Notion reads. Enable with `integrations: [notion]` in ~/.ale/config.yaml, then run `ale install`.
+allow:
+- mcp__claude_ai_Notion__notion-fetch
+- mcp__claude_ai_Notion__notion-search
+- mcp__claude_ai_Notion__notion-get-comments
+- mcp__plugin_Notion_notion__notion-fetch

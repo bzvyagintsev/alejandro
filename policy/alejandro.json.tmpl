@@ -1,0 +1,117 @@
+{
+  "permissions": {
+    "defaultMode": "dontAsk",
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Skill",
+      "Bash(ls*)",
+      "Bash(cat*)",
+      "Bash(head*)",
+      "Bash(tail*)",
+      "Bash(jq*)",
+      "Bash(echo*)",
+      "Bash(grep*)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git show*)",
+      "Bash(git branch*)",
+      "Bash(git rev-parse*)",
+      "Bash(git fetch*)",
+      "Bash(git merge-base*)",
+      "Bash(git ls-files*)",
+      "Bash(git blame*)",
+      "Bash(git remote -v*)",
+      "Bash(gh pr view*)",
+      "Bash(gh pr list*)",
+      "Bash(gh pr diff*)",
+      "Bash(gh pr checks*)",
+      "Bash(gh pr status*)",
+      "Bash(gh run list*)",
+      "Bash(gh run view*)",
+      "Bash(gh run watch*)",
+      "Bash(gh auth status*)",
+      "Bash(gh api repos/*)",
+      "Bash(ale *)",
+      "Bash(hc send*)",
+      "Bash(hc wait*)",
+      "Bash(hc get*)",
+      "Bash(hc read*)",
+      "Bash(herdr-app ls*)",
+      "Bash(herdr-app status*)",
+      "Bash(herdr-app do *)",
+      "Bash(hc ls*)",
+      "Bash(hc get*)",
+      "Bash(cd *)",
+      "Bash(git worktree list*)",
+      "Bash(git grep*)",
+      "Bash(git ls-tree*)",
+      "Bash(git rev-list*)",
+      "Bash(git cat-file*)"
+    ],
+    "deny": [
+      "Bash(gh pr merge*)",
+      "Bash(git push --force*)",
+      "Bash(rm -rf*)",
+      "Bash(sudo*)",
+      "Bash(curl*|*sh*)",
+      "Read(/__HOME__/.ale/key)",
+      "Edit(/__HOME__/.ale/key)",
+      "Edit(/__FRAMEWORK__/**)",
+      "Edit(/__HOME__/.claude/**)",
+      "Edit(/__HOME__/.ale/**/gates.json)",
+      "Edit(/__HOME__/.ale/**/approval.json)",
+      "mcp__plugin_github_github",
+      "mcp__claude_ai_Datadog__upsert_datadog_dashboard",
+      "mcp__claude_ai_LaunchDarkly__toggle-flag",
+      "Edit(/__HOME__/projects/**)",
+      "Edit(/__HOME__/.ale/config.yaml)",
+      "Edit(/__HOME__/.ale/rules.local.md)",
+      "Edit(/__HOME__/.ale/banned-terms.txt)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$ALE_FRAMEWORK/hooks/ale_hook.py\" pre-bash"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write|MultiEdit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$ALE_FRAMEWORK/hooks/ale_hook.py\" pre-edit"
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$ALE_FRAMEWORK/hooks/ale_hook.py\" pre-mcp"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$ALE_FRAMEWORK/hooks/ale_hook.py\" session"
+          }
+        ]
+      }
+    ]
+  }
+}

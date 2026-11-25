@@ -1,0 +1,7 @@
+# Jira reads through the Atlassian MCP. Enable with `integrations: [atlassian]` in ~/.ale/config.yaml, then run `ale install`.
+allow:
+- mcp__atlassian__getJiraIssue
+- mcp__atlassian__searchJiraIssuesUsingJql
+alejandro_allow:
+- mcp__atlassian__getJiraIssue
+- mcp__atlassian__searchJiraIssuesUsingJql

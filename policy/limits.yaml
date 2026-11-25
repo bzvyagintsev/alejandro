@@ -1,0 +1,8 @@
+review_rounds: 3     # review rounds per task; `ale review` refuses round 4
+ci_fixes: 2          # CI fix attempts after the PR is open
+stop_blocks: 3       # consecutive Stop-hook blocks before the builder is let go with needs-user
+rereview_loc: 30     # LOC changed after the last review that still counts as reviewed
+pr_max_loc: 500      # default; a repo yaml may override
+reviewer_keep_context: true   # the reviewer keeps its conversation between reviews; false clears it before every one. It is always cleared at the first review and at the first code round after plan reviews.
+plan_reviews: 2     # `ale review --plan` runs per task; does not count against review_rounds
+pr_feedback_rounds: 5   # rounds of human review feedback the builder handles after the PR is ready

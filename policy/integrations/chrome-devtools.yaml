@@ -1,0 +1,6 @@
+# Chrome DevTools browser tools. Enable with `integrations: [chrome-devtools]` in ~/.ale/config.yaml, then run `ale install`.
+roles:
+- builder
+- reviewer
+allow:
+- mcp__plugin_chrome-devtools-mcp_chrome-devtools

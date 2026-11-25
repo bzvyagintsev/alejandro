@@ -1,0 +1,16 @@
+# Generic defaults. Your own values go in ~/.ale/config.yaml (created by `ale init`); that file is never committed.
+github_owner: ""            # `ale spawn my-app PROJ-1` clones <github_owner>/my-app; `owner/name` overrides it
+ignore_pr_authors: []       # machine accounts whose PR comments `ale watch-pr` ignores (fnmatch, case-insensitive), on top of the built-in bot names
+jira:
+  host: ""                  # e.g. example.atlassian.net; empty = Jira is off (`ale spawn` needs --text)
+  ticket_pattern: '[A-Z][A-Z0-9]+-\d+'
+  type_field: ""            # id of a custom "Type" field to fill at spawn (optional)
+  type_defaults: {}         # Jira issue type (lower case) -> value for that field
+slack:
+  default_channel: ""       # channel name for review requests when a repo config names none
+webfetch_domains: []        # doc sites agents may fetch, besides the Jira host
+integrations: []            # presets from policy/integrations/
+mcp_allow: []               # extra MCP tools every role may use, e.g. mcp__my-design-system__*
+env_vars: []                # names of variables agents may rely on (never values)
+a11y_skill: ""              # name of your accessibility audit skill, run by verify-ui
+guides: []                  # "read before infra code" list pasted into TASK.md

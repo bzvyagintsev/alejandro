@@ -1,0 +1,6 @@
+# Glean enterprise search. Enable with `integrations: [glean]` in ~/.ale/config.yaml, then run `ale install`.
+allow:
+- mcp__claude_ai_Glean__search
+- mcp__claude_ai_Glean__read_document
+- mcp__claude_ai_Glean__chat
+- mcp__claude_ai_Glean__code_search

@@ -1,0 +1,9 @@
+# Sourcegraph code search. Enable with `integrations: [sourcegraph]` in ~/.ale/config.yaml, then run `ale install`.
+allow:
+- mcp__sourcegraph__keyword_search
+- mcp__sourcegraph__read_file
+- mcp__sourcegraph__list_files
+- mcp__sourcegraph__list_repos
+- mcp__sourcegraph__code_finder
+- mcp__sourcegraph__commit_search
+- mcp__sourcegraph__diff_search

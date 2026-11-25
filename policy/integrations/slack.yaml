@@ -1,0 +1,11 @@
+# Slack reads; the builder may also post its one review request (a hook checks it) and drafts. Enable with `integrations: [slack]` in ~/.ale/config.yaml, then run `ale install`.
+allow:
+- mcp__plugin_slack_slack__slack_read_channel
+- mcp__plugin_slack_slack__slack_read_thread
+- mcp__plugin_slack_slack__slack_search_public_and_private
+- mcp__plugin_slack_slack__slack_search_channels
+builder_allow:
+- mcp__plugin_slack_slack__slack_send_message_draft
+- mcp__plugin_slack_slack__slack_send_message
+alejandro_allow:
+- mcp__plugin_slack_slack__slack_read_channel

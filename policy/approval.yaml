@@ -1,0 +1,14 @@
+# Who approves a plan. First matching rule wins; `default` applies otherwise. Evaluated by `ale plan-gate` / `ale approve` after the plan review,
+# from the task's size and flag (TASK.md) and the risk the plan reviewer wrote in reviews/plan.md (`RISK: green|yellow|red`).
+# A missing, stale or unknown risk matches no risk rule, so the plan goes to the user.
+#   user: only the user approves (types `approve plan` in the builder pane)
+#   auto: the builder approves itself with `ale approve` once reviews/plan.md is APPROVE with 0 blockers for this plan hash (recorded as by: auto)
+#   main: parked (IDEAS.md). The code still supports it: Alejandro or the lead approves with `ale approve` under the same condition.
+# A task can pin its tier by hand with `tier_override: user|main|auto` in its TASK.md (nothing writes it).
+# risk: green = good tests, isolated. yellow = mixed or unreliable coverage (the builder first commits a passing test that pins today's behaviour).
+#       red = auth, billing, permissions, payroll, data deletion, migrations (the user decides).
+default: user
+rules:
+  - {risk: [red], tier: user}
+  - {size: [L], tier: user}
+  - {risk: [green, yellow], size: [S, M], tier: auto}
