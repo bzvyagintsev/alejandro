@@ -1,5 +1,7 @@
 # Alejandro&Co: a local agentic engineering framework
 
+<img width="1536" height="1024" alt="Алехандро и компания среди овечек" src="https://github.com/user-attachments/assets/aa9442b6-628d-4dd9-8e89-3498613a5f49" />
+
 `ale` runs a small team of Claude Code agents on a ticket: a **builder** writes the plan and the code, a **reviewer** reviews it in the pane beside it, a **lead** splits an epic, and **Alejandro** (the HQ agent) starts tasks and reports status. Skills say what to do, `ale gate` defines "ready", and hooks block the next step unless the gate or your approval allows it.
 
 Pure scripts and Markdown: nothing here calls an LLM by itself. The threat model is accidental skipping, not a hostile agent.
